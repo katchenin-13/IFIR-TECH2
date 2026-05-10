@@ -1,6 +1,6 @@
 // app/page.tsx
 import { Hero } from '@/features/home/presentation/components/Hero'
-import { Stats } from '@/features/home/presentation/components/Stats'
+import { AboutSection } from '@/features/home/presentation/components/AboutSection'
 import { FormationsSection } from '@/features/formations/presentation/components/FormationsSection'
 import { WhyUs } from '@/features/home/presentation/components/WhyUs'
 import { ServicesSection } from '@/features/services/presentation/components/ServicesSection'
@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Stats />
+      <AboutSection />
       <FormationsSection />
       <WhyUs />
       <ServicesSection />

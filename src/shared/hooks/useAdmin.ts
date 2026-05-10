@@ -30,7 +30,7 @@ export function useAdmin() {
   const logout = () => {
     sessionStorage.removeItem(AUTH_KEY)
     setIsAuthenticated(false)
-    router.push('/admin/login')
+    window.location.href = '/admin/login'
   }
 
   const requireAuth = () => {

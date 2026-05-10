@@ -24,7 +24,7 @@ export default function AdminLoginPage() {
     
     const success = login(password)
     if (success) {
-      router.push('/admin')
+      window.location.href = '/admin'
     } else {
       setError('Mot de passe incorrect. Veuillez réessayer.')
       setLoading(false)

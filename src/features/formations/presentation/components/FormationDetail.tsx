@@ -18,7 +18,8 @@ import {
   Target,
   FileCheck,
   Phone,
-  PhoneCall
+  PhoneCall,
+  CreditCard
 } from 'lucide-react'
 import { Formation } from '../../domain/entities/formation.entity'
 
@@ -250,6 +251,13 @@ export function FormationDetail({ formation }: { formation: Formation }) {
                   </div>
 
                   <div className="relative z-10 space-y-4">
+                    <Link href={`/paiement?formation=${formation.id}`} className="inline-flex items-center justify-between bg-white hover:bg-gray-50 text-[#001B6E] font-black py-5 px-8 rounded-2xl transition-all group w-full shadow-xl">
+                      <span className="uppercase tracking-widest text-xs">Payer en ligne</span>
+                      <div className="bg-[#001B6E]/10 rounded-full p-1.5 ml-4 group-hover:scale-110 transition-transform">
+                        <CreditCard className="w-4 h-4 text-[#001B6E]" />
+                      </div>
+                    </Link>
+
                     <Link href="tel:0748222841" className="inline-flex items-center justify-between bg-accent hover:bg-accent-dark text-black font-black py-5 px-8 rounded-2xl transition-all group w-full shadow-xl shadow-accent/20">
                       <span className="uppercase tracking-widest text-xs">Prendre RDV par appel</span>
                       <div className="bg-black rounded-full p-1.5 ml-4 group-hover:animate-bounce transition-transform">

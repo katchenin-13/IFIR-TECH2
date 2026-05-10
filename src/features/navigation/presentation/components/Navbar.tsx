@@ -193,9 +193,14 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="accent" fullWidth size="lg">
-                  Let&apos;s Talk
-                </Button>
+                <div className="flex flex-col gap-3 mt-4">
+                  <Link href="tel:0748222841" className="w-full">
+                    <Button variant="accent" fullWidth size="lg" className="flex items-center justify-center gap-2">
+                      <Icons.Phone className="w-5 h-5" />
+                      PRENDRE RDV
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -1,0 +1,48 @@
+// design-system/tokens/colors.ts
+export const colors = {
+  primary: {
+    DEFAULT: '#001B6E',
+    dark: '#000F3D',
+    light: '#0A46FF',
+    50: '#E6E9F5',
+    100: '#CDD4EB',
+    200: '#9BA8D6',
+    300: '#697DC2',
+    400: '#3751AD',
+    500: '#001B6E',
+    600: '#001658',
+    700: '#001042',
+    800: '#000B2C',
+    900: '#000516',
+  },
+  accent: {
+    DEFAULT: '#F5B400',
+    light: '#FFC733',
+    dark: '#D19A00',
+    50: '#FEF8E6',
+    100: '#FDF2CC',
+    200: '#FBE59A',
+    300: '#F9D867',
+    400: '#F7CB35',
+    500: '#F5B400',
+    600: '#C49000',
+    700: '#936C00',
+    800: '#624800',
+    900: '#312400',
+  },
+  white: '#FFFFFF',
+  gray: {
+    50: '#F9FAFB',
+    100: '#F3F4F6',
+    200: '#E5E7EB',
+    300: '#D1D5DB',
+    400: '#9CA3AF',
+    500: '#6B7280',
+    600: '#4B5563',
+    700: '#374151',
+    800: '#1F2937',
+    900: '#111827',
+  },
+} as const
+
+export type Colors = typeof colors

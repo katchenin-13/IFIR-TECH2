@@ -2,81 +2,70 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import * as Icons from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@/design-system/components/Button/Button'
 
 const quickLinks = [
   { href: '/', label: 'Accueil' },
+  { href: '/about', label: 'À propos' },
   { href: '/formations', label: 'Formations' },
   { href: '/services', label: 'Services' },
-  { href: '/about', label: 'À propos' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
 
-const socials = [
-  { icon: Icons.Facebook, href: '#', label: 'Facebook' },
-  { icon: Icons.Twitter, href: '#', label: 'Twitter' },
-  { icon: Icons.Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Icons.Instagram, href: '#', label: 'Instagram' },
+const formationsLinks = [
+  { href: '#', label: 'Réparation Mobile & Ordinateur' },
+  { href: '#', label: 'Micro-soudure' },
+  { href: '#', label: 'Architecture Téléphones' },
+  { href: '#', label: 'Réparation Avancée' },
+  { href: '#', label: 'Création Web & Tunnel de Vente' },
+]
+
+const socialLinks = [
+  { icon: Icons.Facebook, href: '#' },
+  { icon: (props: any) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  ), href: '#' },
+  { icon: Icons.Youtube, href: '#' },
 ]
 
 export function Footer() {
-  const [email, setEmail] = useState('')
-  const [subscriptionStatus, setSubscriptionStatus] = useState<string | null>(null)
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-    
-    // Simulation d'inscription
-    setSubscriptionStatus('Inscription réussie !')
-    setEmail('')
-    setTimeout(() => setSubscriptionStatus(null), 3000)
-  }
-
   return (
-    <footer className="bg-primary-dark pt-16 pb-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent"></div>
-      
+    <footer className="bg-[#001D3D] text-white pt-20 pb-8 relative overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* About */}
-          <div>
-            <div className="mb-4">
-              <span className="text-white font-display font-bold text-2xl">
-                IFIR <span className="text-accent">TECH</span>
-              </span>
-              <p className="text-gray-400 text-sm mt-2">
-                Institut de Formation Ivoire Réparation
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="flex flex-col">
+            <div className="mb-6">
+              <Image 
+                src="/images/logo/logo-blan.png" 
+                alt="iFIR TECH Logo" 
+                width={320} 
+                height={120} 
+                className="h-32 w-auto object-contain -ml-4"
+                priority
+              />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Formation professionnelle en réparation mobile, ordinateur, micro-soudure et création de sites web.
+            <p className="text-white/80 text-sm leading-relaxed max-w-[280px]">
+              L&apos;expertise d&apos;aujourd&apos;hui, la réussite de demain.
+              Formations professionnelles et services techniques à Korhogo.
             </p>
-            <div className="flex space-x-3">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="p-2 bg-white/5 rounded-lg hover:bg-accent/20 transition-colors group"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-4 h-4 text-gray-400 group-hover:text-accent transition-colors" />
-                </a>
-              ))}
-            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links Column */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Liens rapides</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold uppercase text-base mb-8">Liens rapides</h3>
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-accent transition-colors text-sm"
+                    className="text-white/80 hover:text-accent transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -85,63 +74,70 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Formations Column */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Nous contacter</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Icons.MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">
-                  Korhogo – Immeuble SILUE<br />
-                  En face de la station PÉTRO IVOIRE
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Icons.Phone className="w-5 h-5 text-accent" />
-                <a href="tel:+2250748222841" className="text-gray-400 hover:text-accent transition-colors text-sm">
-                  +225 07 48 22 28 41
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Icons.Mail className="w-5 h-5 text-accent" />
-                <a href="mailto:contact@ifirtech.ci" className="text-gray-400 hover:text-accent transition-colors text-sm">
-                  contact@ifirtech.ci
-                </a>
-              </li>
+            <h3 className="text-white font-bold uppercase text-base mb-8">Formations</h3>
+            <ul className="space-y-4">
+              {formationsLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/80 hover:text-accent transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact Column */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Newsletter</h3>
-            <p className="text-gray-400 text-sm mb-4">
-              Recevez nos actualités et offres spéciales
-            </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Votre email"
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-accent"
-                required
-              />
-              <Button type="submit" size="sm" fullWidth>
-                <Icons.Send className="w-4 h-4 mr-2" />
-                S&apos;inscrire
-              </Button>
-            </form>
-            {subscriptionStatus && (
-              <p className="text-green-400 text-sm mt-2">{subscriptionStatus}</p>
-            )}
+            <h3 className="text-white font-bold uppercase text-base mb-8">Contactez-nous</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <Icons.MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <span className="text-white/80 text-sm leading-relaxed">
+                  SIS à Korhogo, Immeuble SILUE<br />
+                  en face de la station Pétro Ivoire
+                </span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Icons.Phone className="w-5 h-5 text-accent" />
+                <span className="text-white/80 text-sm">0748222841</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Icons.Mail className="w-5 h-5 text-accent" />
+                <span className="text-white/80 text-sm">contact@ifirtech.ci</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Icons.Clock className="w-5 h-5 text-accent" />
+                <span className="text-white/80 text-sm">Lun - Sam: 8h00 - 18h00</span>
+              </li>
+            </ul>
+            
+            {/* Social Icons */}
+            <div className="flex gap-4 mt-10">
+              {socialLinks.map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#001D3D] hover:bg-accent transition-colors"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center pt-8 border-t border-white/10">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} IFIR TECH. Tous droits réservés.
-          </p>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
+          <p>© 2025 iFIR TECH – Institut de Formation Ivoire Réparation. Tous droits réservés.</p>
+          <div className="flex gap-8">
+            <Link href="#" className="hover:text-white transition-colors">Mentions légales</Link>
+            <Link href="#" className="hover:text-white transition-colors">Politique de confidentialité</Link>
+          </div>
         </div>
       </div>
     </footer>

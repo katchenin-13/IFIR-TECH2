@@ -16,12 +16,12 @@ export const mockWhyUsItems: WhyUsItem[] = [
 ]
 
 const mockHeroContent: HeroContent = {
-  title: 'DEVENEZ EXPERT EN RÉPARATION & TECH',
-  subtitle: 'Formations professionnelles en réparation de téléphones, ordinateurs, micro-soudure et développement web. Apprenez avec les meilleurs experts.',
+  title: 'Computer & Mobile Repair Services',
+  subtitle: 'YOUR TRUSTED PARTNER',
   badge: 'Institut de Formation en Informatique et Réparation',
-  ctaPrimary: 'Voir nos formations',
-  ctaSecondary: 'Nous contacter',
-  image: 'https://placehold.co/600x700/001B6E/F5B400?text=IFIR+TECH',
+  ctaPrimary: 'About More',
+  ctaSecondary: 'Learn More',
+  image: '/images/formation-reparation.jpg',
 }
 
 export class HeroRepositoryImpl {

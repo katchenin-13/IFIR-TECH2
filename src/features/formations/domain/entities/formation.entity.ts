@@ -17,6 +17,7 @@ export interface Formation {
   image: string
   duration: string
   price: string
+  category?: string
   modules: Module[]
   prerequisites: string[]
   objectives: string[]

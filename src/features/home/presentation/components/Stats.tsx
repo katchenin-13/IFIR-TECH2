@@ -48,7 +48,7 @@ export function Stats() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-dark to-primary relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-br from-primary-dark to-primary relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {mockStatistics.map((stat, index) => (

@@ -8,6 +8,7 @@ export interface FormationDTO {
   image: string
   duration: string
   price: string
+  category?: string
   modules: ModuleDTO[]
   prerequisites: string[]
   objectives: string[]

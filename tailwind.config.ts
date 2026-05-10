@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         primary: colors.primary,
         accent: colors.accent,
+        secondary: colors.secondary,
         white: colors.white,
         gray: colors.gray,
       },
@@ -25,6 +26,7 @@ const config: Config = {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite',
         'gradient': 'gradient 3s ease infinite',
+        'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         float: {

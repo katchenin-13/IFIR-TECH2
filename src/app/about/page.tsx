@@ -1,12 +1,17 @@
+// app/about/page.tsx
+import { AboutHero } from '@/features/home/presentation/components/AboutHero'
+import { AboutContent } from '@/features/home/presentation/components/AboutContent'
 import { WhyUs } from '@/features/home/presentation/components/WhyUs'
-import { Stats } from '@/features/home/presentation/components/Stats'
+import { TeamSection } from '@/features/home/presentation/components/TeamSection'
 import { FAQ } from '@/features/faq/presentation/components/FAQ'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-primary-dark pt-20">
+    <main className="min-h-screen bg-white">
+      <AboutHero />
+      <AboutContent />
       <WhyUs />
-      <Stats />
+      <TeamSection />
       <FAQ />
     </main>
   )

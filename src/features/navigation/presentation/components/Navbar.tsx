@@ -15,10 +15,11 @@ const navLinks = [
   { href: '/about', label: 'À PROPOS' },
   { href: '/formations', label: 'FORMATIONS' },
   { href: '/services', label: 'SERVICES' },
+  { href: '/galerie', label: 'GALERIE' },
   { href: '/blog', label: 'BLOG' },
   { href: '/contact', label: 'CONTACT' },
 ]
-const socialLinks = [
+const socialLinks = [
   { icon: Icons.Facebook, href: '#', label: 'Facebook' },
   { icon: (props: any) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -126,13 +127,16 @@ export function Navbar() {
 
             {/* Right Section: CTA */}
             <div className="hidden lg:flex items-center">
-              <Button 
-                variant="accent" 
-                size="md" 
-                className="px-8 py-2.5 rounded-xl text-xs font-black tracking-widest"
-              >
-                INSCRIPTION
-              </Button>
+              <Link href="tel:0748222841">
+                <Button 
+                  variant="accent" 
+                  size="md" 
+                  className="px-8 py-2.5 rounded-xl text-xs font-black tracking-widest flex items-center gap-2 group shadow-lg shadow-accent/20"
+                >
+                  <Icons.Phone className="w-4 h-4 group-hover:animate-bounce" />
+                  PRENDRE RDV
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -189,7 +193,7 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="teal" fullWidth size="lg">
+                <Button variant="accent" fullWidth size="lg">
                   Let&apos;s Talk
                 </Button>
               </div>

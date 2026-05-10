@@ -16,20 +16,20 @@ const getHeroContent = new GetHeroContentUseCase(heroRepository)
 const featureCards = [
   {
     id: '01',
-    title: 'Best Electronics Repair Service',
-    description: 'It is a long established fact that a reader will be distracted by the readable content.',
+    title: 'Maîtrisez les bases de l\'électronique',
+    description: 'Diagnostiquer une panne, remplacer un composant, sauver un appareil — vous apprenez à le faire avec vos propres mains.',
     icon: Icons.Cpu
   },
   {
     id: '02',
-    title: 'Une équipe expérimentée en réparations',
-    description: 'C\'est un fait bien connu que le lecteur se laisse facilement distraire par un contenu attrayant.',
+    title: 'Encadrement humain et personnalisé',
+    description: 'Ici, vous n\'êtes pas un numéro. Nos formateurs vous connaissent par votre nom et suivent votre progression.',
     icon: Icons.Users
   },
   {
     id: '03',
-    title: 'Un service de réparation 100 % sécurisé, rien que pour vous',
-    description: 'C\'est un fait bien connu que le lecteur se laisse distraire par un contenu attrayant.',
+    title: 'Votre avenir commence en salle de formation',
+    description: 'Chaque heure passée chez IFIR Tech est un investissement direct dans votre indépendance financière.',
     icon: Icons.ShieldCheck
   }
 ]
@@ -77,7 +77,7 @@ export function Hero() {
         </div>
 
         <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl mx-auto ">
-          <motion.div variants={fadeInLeft} className="my-4 ">
+          <motion.div variants={fadeInLeft} className="mb-4">
              <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm">
                 {content.subtitle || 'YOUR TRUSTED PARTNER'}
              </span>
@@ -101,18 +101,22 @@ export function Hero() {
           </motion.h1>
 
           <motion.p variants={fadeInLeft} className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-            There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour or randomised.
+            Plus de 500 jeunes ont transformé leur passion pour la tech en un vrai métier grâce à IFIR Tech. C&apos;est votre tour de rejoindre ceux qui ont choisi de ne plus attendre.
           </motion.p>
 
           <motion.div variants={fadeInLeft} className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button variant="accent" size="lg" className="group px-10 py-4 rounded-full">
-              {content.ctaPrimary || 'About More'}
-              <Icons.ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="secondary" size="lg" className="group px-10 py-4 rounded-full">
-              {content.ctaSecondary || 'Learn More'}
-              <Icons.ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="tel:0748222841" className="w-full sm:w-auto">
+              <Button variant="accent" size="lg" className="group px-10 py-4 rounded-full w-full">
+                <Icons.Phone className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                APPELER POUR RDV
+              </Button>
+            </Link>
+            <Link href="/formations" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="group px-10 py-4 rounded-full w-full">
+                NOS FORMATIONS
+                <Icons.ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

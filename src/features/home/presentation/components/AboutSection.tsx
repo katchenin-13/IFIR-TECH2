@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import * as Icons from 'lucide-react'
 import { Button } from '@/design-system/components/Button/Button'
 import { fadeInLeft, fadeInRight } from '@/shared/lib/animations'
@@ -10,13 +11,13 @@ import { fadeInLeft, fadeInRight } from '@/shared/lib/animations'
 export function AboutSection() {
   const features = [
     {
-      title: 'Our Affordable Price',
-      description: 'There are many variations of passage majority have suffered some form injected humour.',
+      title: 'Des prix accessibles, une qualité irréprochable',
+      description: 'Nous croyons que la compétence ne doit pas être un privilège. Nos tarifs sont conçus pour s\'adapter à toutes les bourses.',
       icon: Icons.CircleDollarSign
     },
     {
-      title: 'Trusted Repair Service',
-      description: 'There are many variations of passage majority have suffered some form injected humour.',
+      title: 'Un atelier de confiance depuis plus de 5 ans',
+      description: 'Des centaines d\'appareils réparés, des dizaines d\'élèves formés. Notre réputation parle mieux que n\'importe quelle publicité.',
       icon: Icons.ShieldCheck
     }
   ]
@@ -91,12 +92,12 @@ export function AboutSection() {
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-black text-primary mb-6 leading-[1.1]">
-                We Provide Quality <br />
-                <span className="text-accent">Repair</span> Services
+                N&apos;attendez plus :<br />
+                <span className="text-accent">Formez-vous</span> maintenant
               </h2>
 
               <p className="text-gray-500 mb-8 leading-relaxed max-w-xl">
-                There are many variations of passages available randomised words which the majority have suffered alteration in some form, by injected humour look page when looking at its layout even slightly believable.
+                Chez IFIR Tech, nous ne vendons pas des cours — nous transformons des destins. Que vous soyez chômeur, étudiant ou en reconversion, vous trouverez ici un cadre bienveillant, des formateurs dédiés et un chemin clair vers votre indépendance.
               </p>
 
               <div className="space-y-4 mb-10">
@@ -120,10 +121,12 @@ export function AboutSection() {
                 ))}
               </div>
 
-              <Button variant="accent" size="lg" className="rounded-full px-10 py-6 h-auto group text-base font-bold shadow-lg shadow-accent/20">
-                Discover More
-                <Icons.ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="tel:0748222841">
+                <Button variant="accent" size="lg" className="rounded-full px-10 py-6 h-auto group text-base font-bold shadow-lg shadow-accent/20">
+                  <Icons.Phone className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                  PRENDRE RDV
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
